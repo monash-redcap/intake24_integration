@@ -24,15 +24,11 @@ class Intake24Integration extends AbstractExternalModule
         $triggering_instrument_name = $settings['triggering_instrument_name']['value'];
         $generated_intake24_url     = $settings['generated_intake24_url']['value'];
 
-
-
         if ($instrument == $triggering_instrument_name) {
-
             // check if the URL has been generated before
             $recordData = \Records::getData($project_id, 'array', array($record));
 
             $existing_data = $recordData[$record][$event_id][$generated_intake24_url];
-
 
             if (!$existing_data)
             {
@@ -110,11 +106,11 @@ class Intake24Integration extends AbstractExternalModule
     protected function redirect($url) {
         if (headers_sent()) {
             // If contents already output, use javascript to redirect instead.
-            echo '<script>window.location.href="' . $url . '";</script>';
+            echo '<script>window.location.href="' . REDCap::escapeHtml($url) . '";</script>';
         }
         else {
             // Redirect using PHP.
-            header('Location: ' . $url);
+            header('Location: ' . REDCap::escapeHtml($url));
         }
 
         $this->exitAfterHook();
