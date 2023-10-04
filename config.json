@@ -19,31 +19,37 @@
     {
       "name": "Intake24.com Survey URL, e.g. https://intake24.com/surveys/LEHS_Survey",
       "key": "survey_url",
+      "required": true,
       "type": "text"
     },
     {
       "name": "Intake24 Secret Key for signing the JSON payload",
       "key": "secret_key",
+      "required": true,
       "type": "text"
     },
     {
       "name": "Intake24 Redirect URL stored in the JSON payload",
       "key": "redirect_url",
+      "required": true,
       "type": "text"
     },
     {
       "name": "Intake24 User ID stored in the JSON payload",
       "key": "user_id",
+      "required": true,
       "type": "field-list"
     },
     {
       "name": "The instrument/form name that will trigger the creation of intake24 URL",
       "key": "triggering_instrument_name",
+      "required": true,
       "type": "form-list"
     },
     {
       "name": "The field name that stores the generated intake24 URL with the JSON payload",
       "key": "generated_intake24_url",
+      "required": true,
       "type": "field-list"
     }
 
